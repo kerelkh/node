@@ -67,6 +67,40 @@ a{
   color: #508484;
 }
 
+.btn{
+  display: none;
+  padding: 5px;
+  border: none;
+  background: none;
+  outline: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+.btn-toggle-menu span{
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  transition: .25s;
+}
+
+.btn-toggle-menu.active span:nth-child(1){
+  transform: rotateZ(40deg) translateY(10px);
+}
+.btn-toggle-menu.active span:nth-child(2){
+  opacity: 0;
+}
+
+.btn-toggle-menu.active span:nth-child(3){
+  transform: rotateZ(-40deg) translateY(-10px);
+}
+
+
 .right-nav ul{
   display: flex;
   justify-content: center;
@@ -127,4 +161,86 @@ a{
 
 .image-jumbotron img{
   width: 100%;
+}
+
+
+@media (max-width: 768px){
+  .jumbotron .container{
+    width: 90%;
+  }
+
+  .sosmeds{
+    display: none;
+  }
+
+  .jumbotron-card h1{
+    font-size: 2em;
+  }
+
+  .nav nav{
+    width: 90%;
+  }
+}
+
+@media (max-width: 620px){
+  .nav{
+    position: relative;
+  }
+  .nav .right-nav{
+    background: red;
+  }
+  .nav .right-nav ul{
+    position: absolute;
+    right: -100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    margin-top: 1.5em;
+    background: #fff;
+    transition: .25s;
+  }
+
+  .nav .right-nav ul.active{
+    right: 0;
+  }
+
+  .nav .right-nav li{
+    width: 100%;
+  }
+
+  .nav .right-nav a{
+    width: 100%;
+  }
+
+  .image-jumbotron{
+    display: none;
+  }
+
+  .jumbotron-card{
+    width: 100%;
+  }
+
+  .jumbotron-card h1{
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  .jumbotron-card p{
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .left-nav{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  .btn{
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    bottom: 1.5em;
+  }
 }
