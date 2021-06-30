@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.sosmeds{
+  position: absolute;
+  left: 70px;
+  top: 40%;
+}
+
+.sosmeds li:nth-child(1){
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sosmeds a{
+  display: inline-block;
+  padding: 5px 0;
+  color: #508484;
+}
+
+.sosmeds a:hover{
+  color: #395f5f;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0 0;
+}
+
+.nav>.container{
+  background: #fff;
+  width: 100%;
+}
+
+.nav nav{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-nav{
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing:1px;
+  color: #508484;
+}
+
+.right-nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-nav a{
+  display: inline-block;
+  padding: 1rem;
+  font-size: 1.2em;
+  color: #000;
+}
+
+.right-nav a.active{
+  font-weight: bold;
+}
+
+.right-nav a:hover{
+  background: rgba(230,230,230,.7)
+}
+
+.jumbotron{
+  width: 100%;
+  height: 500px;
+  background-image: url('../images/imgs/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jumbotron .container{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.jumbotron-card{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  padding-left: 2em;
+}
+
+.jumbotron-card h1{
+  font-size: 3em;
+}
+
+.jumbotron-card p{
+  font-style: italic;
+}
+.image-jumbotron{
+  width: 60%;
+}
+
+.image-jumbotron img{
+  width: 100%;
+}
