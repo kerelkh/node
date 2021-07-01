@@ -18,32 +18,14 @@ a{
   text-decoration: none;
 }
 
-.sosmeds{
-  position: absolute;
-  left: 70px;
-  top: 40%;
-}
-
-.sosmeds li:nth-child(1){
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.sosmeds a{
-  display: inline-block;
-  padding: 5px 0;
-  color: #508484;
-}
-
-.sosmeds a:hover{
-  color: #395f5f;
-}
-
 .nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3em 0 0;
+  border-bottom: 1px solid rgba(230,230,230,.7);
 }
 
 .nav>.container{
@@ -60,11 +42,13 @@ a{
 }
 
 .left-nav{
-  font-size: 1.5em;
+  font-size: 1em;
+  line-height: 32px;
+  padding: .5em;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing:1px;
-  color: #508484;
+  color: #000;
 }
 
 .btn{
@@ -105,142 +89,66 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .5s;
 }
 
 .right-nav a{
   display: inline-block;
-  padding: 1rem;
-  font-size: 1.2em;
-  color: #000;
+  line-height: 32px;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 600;
+  color: #030303;
+  border: 2px solid transparent;
+  transition: .5s;
 }
 
-.right-nav a.active{
-  font-weight: bold;
+.right-nav .link.active{
+  border-bottom: 3px solid #030303;
 }
 
-.right-nav a:hover{
-  background: rgba(230,230,230,.7)
+.right-nav .link:hover{
+  border-bottom: 3px solid #030303;
 }
 
-.jumbotron{
-  width: 100%;
-  height: 500px;
-  background-image: url('../images/imgs/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.btn-login{
+  background: #ffd82c;
+  padding: 0 2em!important;
+  border-radius: 10px;
+  margin-left: 2em;
 }
 
-.jumbotron .container{
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.jumbotron-card{
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  padding-left: 2em;
-}
-
-.jumbotron-card h1{
-  font-size: 3em;
-}
-
-.jumbotron-card p{
-  font-style: italic;
-}
-.image-jumbotron{
-  width: 60%;
-}
-
-.image-jumbotron img{
-  width: 100%;
-}
-
-
-@media (max-width: 768px){
-  .jumbotron .container{
-    width: 90%;
-  }
-
-  .sosmeds{
-    display: none;
-  }
-
-  .jumbotron-card h1{
-    font-size: 2em;
-  }
-
+@media (max-width: 670px){
   .nav nav{
-    width: 90%;
-  }
-}
-
-@media (max-width: 620px){
-  .nav{
     position: relative;
   }
-  .nav .right-nav{
-    background: red;
-  }
-  .nav .right-nav ul{
-    position: absolute;
-    right: -100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    margin-top: 1.5em;
-    background: #fff;
-    transition: .25s;
-  }
 
-  .nav .right-nav ul.active{
-    right: 0;
-  }
-
-  .nav .right-nav li{
-    width: 100%;
-  }
-
-  .nav .right-nav a{
-    width: 100%;
-  }
-
-  .image-jumbotron{
-    display: none;
-  }
-
-  .jumbotron-card{
-    width: 100%;
-  }
-
-  .jumbotron-card h1{
-    text-align: center;
-    font-size: 2.5em;
-  }
-
-  .jumbotron-card p{
-    text-align: center;
-    font-size: 1.2em;
-  }
-
-  .left-nav{
-    width: 100%;
-    text-align: center;
-    padding-bottom: 1em;
-  }
-
-  .btn{
+  .right-nav .btn{
     display: inline-block;
     position: absolute;
     right: 5%;
-    bottom: 1.5em;
+    top: 5%;
   }
+
+  
+  .right-nav ul.active{
+    top: 50px;
+  }
+
+  .right-nav ul{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -400px;
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0px rgba(230,230,230,.7);
+  }
+
+  .btn-login{
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+
 }
