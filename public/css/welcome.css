@@ -18,6 +18,14 @@ a{
   text-decoration: none;
 }
 
+body::-webkit-scrollbar {
+  width: .5em;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #ffd82c;
+}
+/* navbar css */
 .nav{
   position: fixed;
   top: 0;
@@ -129,8 +137,10 @@ a{
   margin-left: 2em;
 }
 
+/* end of navbar css */
+/* jumbotron css */
 .jumbotron{
-  height: 600px;
+  height: 100vh;
   width: 100%;
   background-image: url('../images/imgs/jumbotron-background.jpg');
   background-repeat: no-repeat;
@@ -167,6 +177,92 @@ a{
   border-bottom: 50px solid #ffd82c;
   border-radius: 0 0 0 40px;
 }
+
+/* end of jumbotron css */
+
+/* about css */
+.about{
+  background-image: url('../images/imgs/about-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 2em;
+}
+
+.about .container{
+  width: 70%;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about h1{
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2em;
+}
+
+.about .content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content-desc{
+  width: 50%;
+  box-shadow: 0px 10px 20px 0 rgba(230,230,230);
+  padding: 2em;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  transition: .5s;
+}
+
+.content-desc:hover{
+  transform: translateY(-25px);
+}
+
+.content-desc p{
+  line-height: 32px;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.content-desc p:nth-child(1){
+  font-weight: 600;
+}
+
+.content-desc a{
+  background: #ffd82c;
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.content-desc a:hover{
+  box-shadow: 0px 5px 10px 0 rgba(230,230,230);
+}
+.content .image{
+  width: 50%;
+  text-align: center;
+}
+
+.image img{
+  width: 90%;
+}
+
+
+/* end of about css */
+
 
 @media (max-width: 970px){
   .jumbotron .container h1{
