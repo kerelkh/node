@@ -152,11 +152,11 @@ a{
 
 .jumbotron .container h1{
   font-family: "Oleo Script", cursive;
-  font-size: 5em;
+  font-size: 7.5em;
 }
 
 .jumbotron .container p{
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 5px;
   text-transform: capitalize;
   font-style: italic;
@@ -164,7 +164,22 @@ a{
 }
 
 .orange_border{
-  border-bottom: 30px solid #ffd82c;
+  border-bottom: 50px solid #ffd82c;
+  border-radius: 0 0 0 40px;
+}
+
+@media (max-width: 970px){
+  .jumbotron .container h1{
+    font-size: 5em;
+  }
+
+  .jumbotron .container p{
+    font-size: 1em;
+  }
+  .orange_border{
+    border-bottom: 30px solid #ffd82c;
+  }
+
 }
 
 @media (max-width: 670px){
@@ -205,7 +220,7 @@ a{
   }
   
   .jumbotron .container h1{
-    font-size: 3em;
+    font-size: 3.5em;
   }
 
   .jumbotron .container p{
