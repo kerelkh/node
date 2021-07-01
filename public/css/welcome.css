@@ -22,6 +22,7 @@ a{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +50,13 @@ a{
   font-weight: bold;
   letter-spacing:1px;
   color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-nav img{
+  height: 2em;
 }
 
 .btn{
@@ -84,6 +92,9 @@ a{
   transform: rotateZ(-40deg) translateY(-10px);
 }
 
+.right-nav{
+  transition: .5s;
+}
 
 .right-nav ul{
   display: flex;
@@ -100,7 +111,6 @@ a{
   font-weight: 600;
   color: #030303;
   border: 2px solid transparent;
-  transition: .5s;
 }
 
 .right-nav .link.active{
@@ -112,10 +122,49 @@ a{
 }
 
 .btn-login{
+
   background: #ffd82c;
   padding: 0 2em!important;
   border-radius: 10px;
   margin-left: 2em;
+}
+
+.jumbotron{
+  height: 600px;
+  width: 100%;
+  background-image: url('../images/imgs/jumbotron-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron .container{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron .container h1{
+  font-family: "Oleo Script", cursive;
+  font-size: 5em;
+}
+
+.jumbotron .container p{
+  font-size: 1em;
+  padding: 5px;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.orange_border{
+  border-bottom: 30px solid #ffd82c;
 }
 
 @media (max-width: 670px){
@@ -123,23 +172,27 @@ a{
     position: relative;
   }
 
-  .right-nav .btn{
+  nav .btn{
     display: inline-block;
     position: absolute;
-    right: 5%;
     top: 5%;
+    right: 0;
   }
 
-  
-  .right-nav ul.active{
+  .left-nav{
+    width: 100%;
+  }
+  .right-nav.active{
     top: 50px;
   }
 
-  .right-nav ul{
+  .right-nav{
     position: absolute;
     right: 0;
     left: 0;
     top: -400px;
+  }
+  .right-nav ul{
     display: flex;
     background: #fff;
     flex-direction: column;
@@ -150,5 +203,24 @@ a{
     margin-left: 0;
     margin-bottom: 1em;
   }
+  
+  .jumbotron .container h1{
+    font-size: 3em;
+  }
 
+  .jumbotron .container p{
+    font-size: .7em;
+    padding-left: 2em;
+  }
+}
+
+@media (max-width: 470px){
+  .jumbotron{
+    background-image: url('../images/imgs/smartphone-background.png');
+  }
+}
+@media (max-width: 400px){
+  .jumbotron .container h1{
+    font-size: 2.7em;
+  }
 }

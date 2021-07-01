@@ -6,24 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="Project Node">
   <meta name="description" content="All My Project in Node JS">
-  <title>Welcome</title>
+  <title>Life & Journey | Kerelka</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/welcome.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/logos/logo-96x96.png">
+  <meta name="theme-color" content="#ffd82c">
 </head>
 <body>
   <div class="nav">
     <div class="container">
       <nav>
-        <div class="left-nav">Kerelka</div>
+        <div class="left-nav">
+          <img src="images/logos/logo-144x144.png" alt="Logo">
+          <h1>ERELKA</h1>
+        </div>
+        <button class='btn btn-toggle-menu' id="btnToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="right-nav">
-          <button class='btn btn-toggle-menu' id="btnToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
           <ul>
             <li><a href="/" class="active link">Home</a></li>
             <li><a href="/blogs" class='link'>Blogs</a></li>
@@ -32,6 +39,13 @@
           </ul>
         </div>
       </nav>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="animate__animated animate__jackInTheBox"><span class="orange_border">Life</span> & Journey</h1>
+      <p class="animate__animated animate__slideInRight">This website is dedicated as my experience and journey</p>
     </div>
   </div>
 
