@@ -606,6 +606,23 @@ footer a:hover{
     width: 80%;
   }
 
+  #proud-skill .container{
+    width: 90%;
+  }
+
+  #proud-skill h1{
+    font-size: 2em;
+    width: 100%;
+  }
+
+  #proud-skill .knowledge h2{
+    font-size: 1.3em;
+  }
+
+  #proud-skill .progress-graph{
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 670px){
@@ -707,6 +724,22 @@ footer a:hover{
 
   #skills h1{
     font-size: 1.2em;
+  }
+
+  #proud-skill h1{
+    font-size: 1.5em;
+  }
+
+  #proud-skill .knowledge h2{
+    font-size: 1em;
+  }
+
+  #proud-skill .card-knowledge>p{
+    font-size: 1.5em;
+  }
+
+  #proud-skill .graph-knowledge{
+    width: 90%;
   }
 }
 @media (max-width: 400px){
