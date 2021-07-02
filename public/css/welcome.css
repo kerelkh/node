@@ -574,6 +574,38 @@ footer a:hover{
   .about h1{
     font-size: 2em;
   }
+
+  #skills .container{
+    transform: rotateZ(0deg) rotateX(0) rotateY(0);
+    box-shadow: 0 20px 20px 0 rgba(168,168,168,.7);
+    padding: 1em 0;
+  }
+
+  #skills .container #js .progress-bar{
+    opacity: 1;
+    width: 90%;
+  }
+  
+  #skills .container #web_develop .progress-bar{
+    opacity: 1;
+    width: 80%;
+  }
+  
+  #skills .container #web_design .progress-bar{
+    opacity: 1;
+    width: 85%;
+  }
+  
+  #skills .container #node .progress-bar{
+    opacity: 1;
+    width: 90%;
+  }
+  
+  #skills .container #php .progress-bar{
+    opacity: 1;
+    width: 80%;
+  }
+
 }
 
 @media (max-width: 670px){
@@ -650,6 +682,18 @@ footer a:hover{
   .content .image{
     width: 100%;
   }
+
+  #skills h1{
+    font-size: 1.5em;
+  }
+
+  #skills .container{
+    width: 90%;
+  }
+
+  .skill-list{
+    width: 90%;
+  }
 }
 
 @media (max-width: 470px){
@@ -659,6 +703,10 @@ footer a:hover{
 
   .about h1{
     font-size: 1.5em;
+  }
+
+  #skills h1{
+    font-size: 1.2em;
   }
 }
 @media (max-width: 400px){
