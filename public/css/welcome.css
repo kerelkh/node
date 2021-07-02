@@ -142,7 +142,7 @@ body::-webkit-scrollbar-thumb {
 .jumbotron{
   height: 100vh;
   width: 100%;
-  background-image: url('../images/imgs/jumbotron-background.jpg');
+  background-image: url('../images/imgs/jumbotron-background-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -512,13 +512,131 @@ body::-webkit-scrollbar-thumb {
 
 /* end of proud css */
 
+/* counter proud css */
+#counter-proud{
+  padding: 4em 0;
+}
+#counter-proud .container{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#counter-proud h1{
+  text-align: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+
+#counter-proud .content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em 0;
+}
+
+#counter-proud .desc{
+  width: 40%;
+}
+
+#counter-proud .desc h3{
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+#counter-proud .orange-border{
+  border-bottom: 10px solid #ffd82c;
+}
+
+#counter-proud .desc p{
+  font-size: 2em;
+}
+
+#counter-proud .bold{
+  font-weight: 600;
+  font-style: italic;
+}
+
+#counter-proud .images{
+  width: 40%;
+  overflow: hidden;
+}
+
+#counter-proud img{
+  margin-top: 2em;
+  width: 100%;
+}
+
+/* end of counter proud css */
+
+/* additional info css */
+#additional-info{
+  background: rgba(250,250,250,.9);
+}
+
+#additional-info .container{
+  width: 70%;
+  margin: 0 auto;
+  padding: 3em 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#additional-info .left-info{
+  width: 40%;
+  margin-bottom: 2em;
+}
+
+#additional-info .logo{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+#additional-info h1{
+  font-size: 2em;
+}
+
+#additional-info .logo img{
+  height: 2.5em;
+}
+
+#additional-info .contacts{
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#additional-info .contacts ul:nth-child(1){
+  margin-right: 4em;
+}
+
+#additional-info a{
+  display: inline-block;
+  color: #000;
+  background: #ffd82c;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 10px;
+  font-weight: 600;
+  transition: .25s;
+}
+
+#additional-info i{
+  margin-right: .5em;
+}
+
+#additional-info a:hover{
+  background: #e2bb0b;
+}
+
+/* end of additional info css */
 /*  footer css */
 footer{
-  position: fixed;
-  z-index: 999;
-  bottom: 0;
-  left: 0;
-  right: 0;
   border-top: 2px solid #ffd82c;
   background: #fff;
 }
@@ -586,6 +704,27 @@ footer a:hover{
     font-size: 2em;
   }
 
+  .about .content:nth-child(even){
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .about .content:nth-child(odd){
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .content-desc{
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .content .image{
+    width: 100%;
+  }
+
   #skills .container{
     transform: rotateZ(0deg) rotateX(0) rotateY(0);
     box-shadow: 0 20px 20px 0 rgba(168,168,168,.7);
@@ -634,7 +773,47 @@ footer a:hover{
     width: 100%;
   }
 
+  #counter-proud h1{
+    font-size: 2em;
+  }
 }
+
+@media (max-width: 780px){
+  #counter-proud .desc{
+    width: 100%;
+  }
+
+  #counter-proud .images{
+    display: none;
+  }
+
+  #counter-proud .desc h3{
+    text-align: center;
+  }
+  #additional-info .container{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  #additional-info .logo{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #additional-info .left-info{
+    text-align: center;
+    width: 60%;
+  }
+
+  #additional-info .contacts{
+    justify-content: space-between;
+  }
+  #additional-info .contacts ul:nth-child(1){
+    margin-right: 0;
+  }
+}
+
 
 @media (max-width: 670px){
   .nav .container, .jumbotron .container, .about .container{
@@ -690,27 +869,6 @@ footer a:hover{
     border-bottom: 4px solid #ffd82c;
   }
 
-  .about .content:nth-child(even){
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .about .content:nth-child(odd){
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .content-desc{
-    width: 100%;
-    margin-bottom: 1em;
-  }
-
-  .content .image{
-    width: 100%;
-  }
-
   #skills h1{
     font-size: 1.5em;
   }
@@ -764,6 +922,13 @@ footer a:hover{
 
   #footer p{
     font-size: .6em;
+  }
+
+  #counter-proud h1{
+    font-size: 1.5em;
+  }
+
+  #counter-proud .desc h3{
   }
 }
 @media (max-width: 400px){
