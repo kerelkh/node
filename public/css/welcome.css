@@ -462,6 +462,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0 10px 20px 0 rgba(168,168,168,.7);
   position: relative;
   transition: .5s;
+  overflow: hidden;
   animation: fadein 2s ease-in-out forwards;
 }
 
@@ -559,6 +560,16 @@ footer a:hover{
 }
 
 /* end of footer css */
+
+@media (max-width: 1080px){
+  #footer audio{
+    display: none;
+  }
+
+  #footer a{
+    display: none;
+  }
+}
 @media (max-width: 970px){
   .jumbotron .container h1{
     font-size: 5em;
@@ -711,6 +722,10 @@ footer a:hover{
   .skill-list{
     width: 90%;
   }
+
+  #footer p{
+    font-size: .8em;
+  }
 }
 
 @media (max-width: 470px){
@@ -740,6 +755,15 @@ footer a:hover{
 
   #proud-skill .graph-knowledge{
     width: 90%;
+    height: 250px;
+  }
+
+  #proud-skill .graph-knowledge p{
+    font-size: .8em;
+  }
+
+  #footer p{
+    font-size: .6em;
   }
 }
 @media (max-width: 400px){
