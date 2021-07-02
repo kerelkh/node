@@ -277,7 +277,6 @@ body::-webkit-scrollbar-thumb {
 
 #skills .container{
   width: 70%;
-  height: 500px;
   position: relative;
   margin: 0 auto;
   background: #fff;
@@ -288,14 +287,18 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-10deg);
   transition: .5s;
+  animation: fadein 2s ease-in-out forwards;
 }
 
 #skills .container:hover{
   transform: rotateZ(0deg) rotateX(0) rotateY(0);
   box-shadow: 0 20px 20px 0 rgba(168,168,168,.7);
+}
+
+#skills h1{
+  text-align: center;
 }
 
 #skills .dot-style{
@@ -315,15 +318,134 @@ body::-webkit-scrollbar-thumb {
 #skills h1{
   font-size: 2em;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 .orange_border_small{
   border-bottom: 10px solid #ffd82c;
 }
 
+.skill-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.skill{
+  margin-bottom: 1em;
+}
+
+.skill p{
+  text-align: left;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.skill .progress{
+  width: 100%;
+  background: #fff;
+  padding: 5px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: -10px 10px 10px 0px rgba(230,230,230,.7);
+  transition: .5s;
+}
+
+#skills .container:hover .progress{
+  box-shadow: 0px 10px 10px 0px rgba(230,230,230,.7);
+}
+
+.skill .progress-bar{
+  width:0%;
+  opacity: 0;
+  height: 20px;
+  text-align: right;
+  padding-right: 10px;
+  background: #ffd82c;
+  transition: 1s ease-in;
+  border-radius: 0 10px 10px 0;
+  box-shadow: -10px 10px 10px 0 rgba(230,230,230,.3);
+}
+
+#skills .container:hover #js .progress-bar{
+  opacity: 1;
+  width: 90%;
+}
+
+#skills .container:hover #web_develop .progress-bar{
+  opacity: 1;
+  width: 80%;
+}
+
+#skills .container:hover #web_design .progress-bar{
+  opacity: 1;
+  width: 85%;
+}
+
+#skills .container:hover #node .progress-bar{
+  opacity: 1;
+  width: 90%;
+}
+
+#skills .container:hover #php .progress-bar{
+  opacity: 1;
+  width: 80%;
+}
 
 /* end of skills css */
 
+
+
+/*  footer css */
+footer{
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 2px solid #ffd82c;
+  background: #fff;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 0;
+}
+
+footer audio{
+  height: 1.4em;
+  color: #ffd82c;
+  position: absolute;
+  left: 1em;
+}
+
+footer p{
+  margin: 0 auto;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+footer a{
+  position: absolute;
+  right: 1em;
+  color: #030303;
+  background: #ffd82c;
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+footer a:hover{
+  background: #e9c111;
+}
+
+/* end of footer css */
 @media (max-width: 970px){
   .jumbotron .container h1{
     font-size: 5em;
@@ -429,5 +551,14 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 400px){
   .jumbotron .container h1{
     font-size: 2.7em;
+  }
+}
+
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
