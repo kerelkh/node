@@ -1,4 +1,4 @@
-const prod = true;
+const prod = false;
 
 if(!prod){
   require('dotenv').config();
@@ -16,11 +16,12 @@ app.use(express.static('public'));
 
 //routes
 const indexRoute = require('./routes/index');
+const loginRoute = require('./routes/login');
 
 
 //use routes
 app.use('/', indexRoute);
-
+app.use('/login', loginRoute);
 
 //error 404
 app.use((req, res) => {
