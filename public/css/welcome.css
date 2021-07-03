@@ -8,6 +8,7 @@ html, body{
   width: 100%;
   overflow-x: hidden;
   font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
 }
 
 li{
@@ -678,7 +679,30 @@ footer a:hover{
 }
 
 /* end of footer css */
+/*  button to top css */
 
+.to-top{
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 1.7em;
+  z-index: 999;
+  background: #ffd82c;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.to-top:hover{
+  background: #e9c111;
+}
+
+/* end of button top css */
 @media (max-width: 1080px){
   #footer audio{
     display: none;

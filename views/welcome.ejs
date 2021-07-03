@@ -22,7 +22,7 @@
     <div class="container">
       <nav>
         <div class="left-nav">
-          <img src="images/logos/logo-144x144.png" alt="Logo">
+          <img src="images/logos/logo-144x144.png" alt="Logo" loading="lazy">
           <h1>ERELKA</h1>
         </div>
         <button class='btn btn-toggle-menu' id="btnToggle" aria-label="toggle menu">
@@ -59,13 +59,13 @@
           <a href="#" download><i class="fas fa-file-download"></i> Resume</a>
         </div>
         <div class="image">
-          <img src="images/imgs/programming.svg" alt="Programming">
+          <img src="images/imgs/programming.svg" loading="lazy" alt="Programming">
         </div>
       </div>
       <h1>what i'm currently good at</h1>
       <div class="content">
         <div class="image">
-          <img src="images/imgs/web-develop.svg" alt="web developer">
+          <img src="images/imgs/web-develop.svg" loading="lazy" alt="web developer">
         </div>
         <div class="content-desc">
           <p>Web Development</p>
@@ -78,12 +78,12 @@
           <p>Modern website design with fully responsive website.</p>
         </div>
         <div class="image">
-          <img src="images/imgs/web-design.svg" alt="web design">
+          <img src="images/imgs/web-design.svg" loading="lazy" alt="web design">
         </div>
       </div>
       <div class="content">
         <div class="image">
-          <img src="images/imgs/troubleshoot.svg" alt="web developer">
+          <img src="images/imgs/troubleshoot.svg" loading="lazy" alt="web developer">
         </div>
         <div class="content-desc">
           <p>Problem Solve</p>
@@ -164,7 +164,7 @@
           will bring me <span class="bold">one step closer</span> to <span class="bold">My Goal.</span></p>
         </div>
         <div class="images">
-          <img src="images/imgs/road-to-knowledge.svg" alt="Road to knowledge">
+          <img src="images/imgs/road-to-knowledge.svg" loading="lazy" alt="Road to knowledge">
         </div>
       </div>
     </div>
@@ -197,9 +197,10 @@
       </div>
     </div>
   </div>
+
   <footer id="footer">
     <div class="container">
-      <audio controls>
+      <audio controls autoplay>
         <source src="music/bensound-buddy.mp3" type="audio/mpeg">
         Your Browser doest not support the audio element.
       </audio>
@@ -208,6 +209,7 @@
     </div>
   </footer>
 
+  <button class="to-top animate__animated animate__slideInUp" id="toTop"><i class="far fa-arrow-alt-circle-up"></i></button>
   <script src="js/welcome.js"></script>
 </body>
 </html>

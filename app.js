@@ -1,4 +1,4 @@
-const prod = false;
+const prod = true;
 
 if(!prod){
   require('dotenv').config();
