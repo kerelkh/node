@@ -24,6 +24,17 @@
       <div class="login">
         <div class="top-login">
           <h1>Welcome back</h1>
+          <% if(flash) { %>
+            <% if(flash.type == 'danger') { %>
+              <div class="alert alert-danger">
+            <% } else if(flash.type=='success') {%>
+              <div class="alert alert-success">
+            <% } else { %>
+              <div class="alert alert-info">
+            <% } %>
+                <p><span class="bold"><%= flash.intro %></span> <%=flash.info %></p>
+              </div>
+          <% } %>
         </div>
         <div class="bottom-login">
           <form action="" method="POST">
@@ -36,7 +47,6 @@
               <input type="password" name="password" id="password" placeholder="password" required>
             </div>
             <button type="submit" class="btn">Log in</button>
-            <a href="/register">Create new account</a>
           </form>
         </div>
       </div>

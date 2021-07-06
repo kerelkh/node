@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://kerelka:kmzwa88saa@cluster0.mjre1.mongodb.net/kerelka?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost:27017/kerelka', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
