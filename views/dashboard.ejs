@@ -4,10 +4,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="title" content="Project Node">
+  <meta name="description" content="All My Project in Node JS">
+  <title>Dashboard | KERELKA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/logos/logo-96x96.png">
+  <meta name="theme-color" content="#ffd82c">
 </head>
 <body>
-  <h1>Selamat datang di dashboard</h1>
-  <a href="/logout">logout</a>
+  <div id="page">
+    <div id="side-nav">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="images/logos/logo-144x144.png" alt="Logo">
+            <h1>ERELKA</h1>
+          </a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="/dashboard" class="active"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+            <li>Pages:</li>
+            <li>
+              <a href="/"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li><a href="/blogs"><i class="fas fa-blog"></i>Blogs</a></li>
+            <li><a href="/projects"><i class="fas fa-project-diagram"></i>Projects</a></li>
+            <li>Blog Utility:</li>
+            <li><a href="#"><i class="fas fa-tasks"></i>List Post</a></li>
+            <li><a href="#"><i class="fas fa-plus-square"></i>Add New Post</a></li>
+            <li>Projects Utility:</li>
+            <li><a href="#"><i class="fas fa-tasks"></i>List Post</a></li>
+            <li><a href="#"><i class="fas fa-plus-square"></i>Add New Post</a></li>
+            <li>Utility:</li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
