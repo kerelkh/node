@@ -35,7 +35,12 @@
             <li><a href="/" class="active link">Home</a></li>
             <li><a href="/blogs" class='link'>Blogs</a></li>
             <li><a href="/projects" class='link'>Projects</a></li>
+            <% if(login) { %>
+            <li><a href="/dashboard" class='btn-login'>Dashboard</a></li>
+            <li><a href="/logout" class='btn-login btn-red'>Logout</a></li>
+            <% } else { %>
             <li><a href="/login" class='btn-login'>Login</a></li>
+            <% } %>
           </ul>
         </div>
       </nav>
