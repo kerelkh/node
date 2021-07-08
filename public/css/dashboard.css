@@ -116,6 +116,7 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
+/* css for top-nav */
 .top-nav{
   width: 100%;
   font-size: .9em;
@@ -250,7 +251,8 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-#content{
+/* css content */
+#dashboard{
   padding: 1em;
 }
 
@@ -259,9 +261,11 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
-#content .card{
+#dashboard .card{
+  min-width: 150px;
   padding: 1em;
   background: #fff;
   border-radius: 10px;
@@ -277,4 +281,93 @@ body::-webkit-scrollbar-thumb {
 
 .card p{
   font-weight: 600;
+}
+
+
+/* css for activities */
+
+.activities{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.post{
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 rgba(230,230,230,.9);
+}
+
+.post>p{
+  background: #ffd82c;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.post li{
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+}
+
+.post li:nth-child(odd){
+  background: rgba(240,240,240,.2);
+}
+
+.post li .author{
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.author p{
+  color: rgba(130,130,130);
+}
+
+.info{
+  padding: 0 1em;
+  width: 100%;
+}
+
+.info .post-title{
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.info .post-desc{
+  font-size: .9em;
+  padding-bottom: 5px;
+}
+
+.info .date{
+  font-size: .7em;
+  padding: 5px 0;
+  color: rgba(150,150,150);
+  border-top: 2px solid rgb(200,200,200);
+}
+
+.action{
+  padding: 0 1em;
+}
+
+.action select{
+  padding: 10px;
+  line-height: 32px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 5px 0 rgba(230,230,230,.9);
+  border-radius: 10px;
+}
+
+.action select option{
+  border: none;
+}
+
+.last-activities{
+  width: 30%
 }
