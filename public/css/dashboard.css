@@ -252,7 +252,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* css content */
-#dashboard{
+.content{
   padding: 1em;
 }
 
@@ -261,16 +261,16 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1em;
 }
 
-#dashboard .card{
+.content .card{
   min-width: 150px;
   padding: 1em;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(230,230,230,.9);
   margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .card h3{

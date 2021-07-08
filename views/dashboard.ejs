@@ -85,18 +85,22 @@
             </div>
           </div>
           <div class="useremail">
-            <p>kerelkaa@gmail.com</p>
+            <p><%= useremail %></p>
             <div class="img-user">
               <i class="fas fa-user"></i>
             </div>
           </div>
         </div>
-        <div id="dashboard">
+        <div class="content" id="dashboard">
           <div class="pages">
-            <div class="card">
-              <h3>Homepage</h3>
-              <p><i class="fas fa-eye"></i> <span class="count">132832</span> Views</p>
-            </div>
+            <% if(pages.length != 0){ %>
+              <% pages.forEach((page) => { %>
+                <div class="card">
+                  <h3><%= page.page %></h3>
+                <p><i class="fas fa-eye"></i> <span class="count"><%= page.views %></span> Views</p>
+                </div>
+              <% }) %>
+            <% } %>
             <div class="card">
               <h3>Blogs</h3>
               <p><i class="fas fa-eye"></i> <span class="count">102439</span> Views</p>
@@ -190,7 +194,9 @@
                 </li>
               </ul>
             </div>
-            <div class="last-activities"></div>
+            <div class="popular-post">
+              
+            </div>
           </div>
         </div>
       </div>
