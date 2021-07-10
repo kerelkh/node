@@ -9,3 +9,11 @@ $('.count').each(function () {
       }
   });
 });
+
+tinymce.init({
+    selector: 'textarea#body',
+    width: 700,
+    height: 500,
+    plugins: 'link image code',
+    content_style: 'body { font-family: Nunito, sans-serif'
+ });

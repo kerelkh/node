@@ -12,6 +12,6 @@ router.get('/', cekLogin, async (req, res) => {
 });
 
 router.get('/newpost', cekLogin, async (req, res) => {
-  res.render('dashboard', { hal: 'newpost', useremail: req.session.user_email});
+  res.render('dashboard', { hal: 'Newpost', useremail: req.session.user_email});
 })
 module.exports = router;
