@@ -36,6 +36,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 100vh;
   display: flex;
   justify-content: stretch;
+  align-items: stretch;
 }
 /* sidenav css */
 #side-nav{
@@ -45,6 +46,10 @@ body::-webkit-scrollbar-thumb {
   /* background: #ffd82c url(../images/imgs/side-nav.png) no-repeat;
   background-size: cover;
   background-position: center; */
+  position: fixed;
+  background: #fff;
+  height: 100vh;
+  z-index: 999;
 }
 
 .logo{
@@ -109,6 +114,8 @@ body::-webkit-scrollbar-thumb {
 
 .right-column{
   width: 100%;
+  position: relative;
+  left: 300px;
 }
 
 .right-column .container{
@@ -127,8 +134,10 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
+  right: 0;
+  z-index: 998;
 }
-
 
 .notification{
   display: flex;
@@ -254,6 +263,8 @@ body::-webkit-scrollbar-thumb {
 /* css content */
 .content{
   padding: 1em;
+  position: relative;
+  top: 70px;
 }
 
 .pages{
@@ -289,7 +300,7 @@ body::-webkit-scrollbar-thumb {
 .activities{
   display: flex;
   justify-content:flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 1em;
 }
 
@@ -368,6 +379,52 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 
-.last-activities{
-  width: 30%
+.popular-post{
+  background: #fff;
+  box-shadow: 0 10px 10px 0 rgba(230,230,230,.9);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1em 1em;
 }
+
+.popular-post>p{
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 5px solid #ffd82c;
+  margin-bottom: 1em;
+}
+
+.popular-post ul{
+  font-weight: 600;
+}
+
+.popular-post ul .popular-post li{
+  width: 100%;
+}
+
+.popular-post li{
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1em;
+  box-shadow: 0 10px 10px 0 rgba(230,230,230,.9);
+}
+
+.popular-post li .no{
+  display: inline-block;
+  background: #fff;
+  padding: 10px;
+}
+
+.popular-post li p:nth-child(2){
+  background: #ffd82c;
+  padding: 10px;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+

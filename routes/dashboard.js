@@ -8,7 +8,10 @@ router.get('/', cekLogin, async (req, res) => {
   const pages = await Page.find((err, result) => {
     return result;
   });
-  res.render('dashboard', { pages: pages, useremail: req.session.user_email});
+  res.render('dashboard', { hal: 'Dashboard', pages: pages, useremail: req.session.user_email});
 });
 
+router.get('/newpost', cekLogin, async (req, res) => {
+  res.render('dashboard', { hal: 'newpost', useremail: req.session.user_email});
+})
 module.exports = router;
