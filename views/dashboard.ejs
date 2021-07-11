@@ -37,7 +37,7 @@
             <li><a href="/blogs"><i class="fas fa-blog"></i>Blogs</a></li>
             <li><a href="/projects"><i class="fas fa-project-diagram"></i>Projects</a></li>
             <li>Blog Utility:</li>
-            <li><a href="#"><i class="fas fa-tasks"></i>List Post</a></li>
+            <li><a href="/dashboard/listpost"><i class="fas fa-tasks"></i>List Post</a></li>
             <li><a href="/dashboard/newpost"><i class="fas fa-plus-square"></i>Add New Post</a></li>
             <li>Projects Utility:</li>
             <li><a href="#"><i class="fas fa-tasks"></i>List Post</a></li>
@@ -214,7 +214,7 @@
               </div>
             </div>
           </div>
-        <% }else{ %>
+        <% }else if(hal == 'Newpost') { %>
           <div class="content" id="newpost">
             <div class="container">
               <h2>New Post</h2>
@@ -229,7 +229,7 @@
                     <p><span class="bold"><%= flash.intro %></span> <%=flash.info %></p>
                   </div>
               <% } %>
-              <form action="/dashboard/newpost" method="post" enctype="multipart/form-data">
+              <form action="/dashboard/newpost" class="animate__animated animate__fadeInUp" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="title">Title</label>
                   <% if(typeof prevData === "undefined") { %>
@@ -281,9 +281,47 @@
               </form>
             </div>
           </div>
+        <% }else{ %>
+          <div class="content" id="listpost">
+            <div class="container">
+              <h2>BLOGS</h2>
+              <div class="datas">
+                <form action="#" method="GET">
+                  <div class="form-group">
+                    <input type="search" autocomplete="off" name="search" id="search" placeholder="search">
+                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                  </div>
+                </form>
+                <div class="list-data">
+                  <div class="card animate__animated animate__fadeInUp">
+                    <div class="images">
+                      <img src="/thumbnail-1625988490238.jpg" alt="">
+                    </div>
+                    <div class="info">
+                      <p>Author: Kerel Khalif Afif</p>
+                      <p>Created Date: 22-14-2021</p>
+                      <div class="info-detail">
+                        <p class="info-title">Cara mencari uang</p>
+                        <p>Tahukah kamu kalo mencari uang itu susah</p>
+                        <form action="" method="POST">
+                          <input type="hidden" name="id">
+                          <select name="status" id="status" onchange="this.form.submit()">
+                            <option value="request" selected>Request</option>
+                            <option value="publish">Publish</option>
+                          </select>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         <% } %>
 
       </div>
+    
+    
     </div>
   </div>
   <img src="images" alt="">

@@ -19,6 +19,10 @@ router.get('/', async (req, res) => {
   res.render('dashboard', { hal: 'Dashboard', pages: pages, useremail: req.session.user_email});
 });
 
+router.get('/listpost', (req, res) => {
+  res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email});
+})
+
 router.get('/newpost', async (req, res) => {
   let prevData;
   if(req.session.prevData){
