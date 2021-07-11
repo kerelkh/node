@@ -218,26 +218,61 @@
           <div class="content" id="newpost">
             <div class="container">
               <h2>New Post</h2>
-              <form action="" method="post">
+              <% if(flash){ %>
+                <% if(flash.type == 'danger') { %>
+                  <div class="alert alert-danger">
+                <% } else if(flash.type=='success') {%>
+                  <div class="alert alert-success">
+                <% } else { %>
+                  <div class="alert alert-info">
+                <% } %>
+                    <p><span class="bold"><%= flash.intro %></span> <%=flash.info %></p>
+                  </div>
+              <% } %>
+              <form action="/dashboard/newpost" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="title">Title</label>
+                  <% if(typeof prevData === "undefined") { %>
                   <input type="text" name="title" id="title" placeholder="Title pos" autocomplete="off" required>
+                  <% }else{ %>
+                  <input type="text" name="title" id="title" placeholder="Title pos" autocomplete="off" value="<%= prevData.title %>" required>
+                  <% } %>
                 </div>
                 <div class="form-group">
                   <label for="author">Author</label>
+                  <% if(typeof prevData === "undefined") { %>
                   <input type="text" name="author" id="author" placeholder="Author" required>
+                  <% }else{ %>
+                  <input type="text" name="author" id="author" placeholder="Author" value="<%= prevData.author %>" required>
+                  <% } %>
                 </div>
                 <div class="form-group">
-                  <label for="simple_desc">Desc</label>
+                  <label for="simple_desc">Description</label>
+                  <% if(typeof prevData === "undefined") { %>
                   <input type="text" name="simple_desc" id="simple_desc" autocomplete="off" required placeholder="Simple description">
+                  <% }else{ %>
+                  <input type="text" name="author" id="author" placeholder="Author" value="<%= prevData.desc %>"" required>
+                  <% } %>
+                </div>
+                <div class="form-group">
+                  <label for="thumbnail">Thumbnail <span class="second">(max: 2mb)</span></label>
+                  <input type="file" name="thumbnail" id="thumbnail" required>
                 </div>
                 <div class="form-group">
                   <label for="body">Body</label>
-                  <textarea name="body" id="body" required></textarea>
+                  <% if(typeof prevData === "undefined") { %>
+                  <textarea name="body" id="body"></textarea>
+                  <% }else{ %>
+                  <textarea name="body" id="body"><%= prevData.body %></textarea>
+                  <% } %>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
-                  <input type="text" name="category" id="category" required placeholder="Category1,category2,...">
+                  <% if(typeof prevData === "undefined") { %>
+                  <input type="text" name="category" id="category" required placeholder="Category1 category2 category3 ...">
+                  <% }else{ %>
+                  <input type="text" name="category" id="category" value="<%= prevData.category %>" required placeholder="Category1,category2,...">
+                  <% } %>
                 </div>
                 <div class="form-group">
                   <label for=""></label>

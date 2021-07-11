@@ -5,6 +5,7 @@ if(!prod){
 }
 const express = require('express');
 const session = require('express-session');
+
 require('./config/database')
 
 const app = express();
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 8080;
 //express config
 app.set('view engine', 'ejs');
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(session({
   secret: 'solid',

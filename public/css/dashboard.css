@@ -468,6 +468,12 @@ body::-webkit-scrollbar-thumb {
   width: 150px;
   font-weight: 600;
   line-height: 32px;
+  margin-right: 1em;
+}
+
+#newpost label>span{
+  color: rgba(100,100,100,.8);
+  font-size: .8em;
 }
 
 #newpost input, #newpost textarea{
@@ -483,12 +489,6 @@ body::-webkit-scrollbar-thumb {
   background: #fff;
   border-bottom: 2px solid #ffd82c;
   outline: none;
-}
-
-#newpost input:focus{
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 5px 0 #ffd82c;
 }
 
 .btn{
@@ -508,4 +508,35 @@ body::-webkit-scrollbar-thumb {
 
 .btn-submit:hover{
   background: rgb(84, 163, 114);
+}
+
+/* alert utilities */
+.alert{
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.alert p{
+  font-size: .9em;
+}
+
+.alert .bold{
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+.alert-success{
+  background: #9af39a;
+  color: #1b815f;
+}
+
+.alert-danger{
+  background: #f39a9a;
+  color: #ac1b1b;
+}
+
+.alert-info{
+  background: #6cadf7;
+  color: #195292;
 }
