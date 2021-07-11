@@ -19,8 +19,25 @@ router.get('/', async (req, res) => {
   res.render('dashboard', { hal: 'Dashboard', pages: pages, useremail: req.session.user_email});
 });
 
-router.get('/listpost', (req, res) => {
-  res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email});
+router.get('/listpost', async (req, res) => {
+  //get all data
+  let data;
+  if(req.query.search){
+    const re = new RegExp(req.query.search, 'i');
+    data = await Blog.find({$or :[{ title: { $regex: re} }, {description: { $regex: re}}] },(err, result) => {
+        if(err) return res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email, data: false});
+        console.log(result);
+        return result;
+      })
+    
+  }else{
+    data = await Blog.find((err, result) => {
+      if(err) return res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email, data: false});
+      return result;
+    })
+  }
+
+  res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email, data: data});
 })
 
 router.get('/newpost', async (req, res) => {

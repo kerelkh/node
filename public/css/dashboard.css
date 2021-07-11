@@ -549,12 +549,12 @@ body::-webkit-scrollbar-thumb {
 .datas .list-data{
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 1em;
 }
 
-.card{
+.datas .card{
   width: 500px;
   margin-bottom: 1em;
   display: flex;
@@ -562,14 +562,18 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.card .images{
+.datas .card .images{
   height: 134px;
   width: 200px;
   overflow: hidden;
 }
 
-.card .images img{
+.datas .card .images img{
   width: 150px;
+}
+
+.info{
+  position: relative;
 }
 
 .info>p{
@@ -610,8 +614,20 @@ body::-webkit-scrollbar-thumb {
   transition: .25s;
 }
 
+.info-detail form select>option{
+  background: #fff;
+}
+
 .info-detail form select:hover{
   background: #ffd82c;
+}
+
+.btn-view{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-bottom: 1px solid #ffd82c;
+  color: #2c7c8b;
 }
 
 

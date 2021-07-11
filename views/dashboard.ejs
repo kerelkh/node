@@ -286,33 +286,51 @@
             <div class="container">
               <h2>BLOGS</h2>
               <div class="datas">
-                <form action="#" method="GET">
+                <form action="/dashboard/listpost" method="GET">
                   <div class="form-group">
                     <input type="search" autocomplete="off" name="search" id="search" placeholder="search">
-                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-search" type='submit'><i class="fas fa-search"></i></button>
                   </div>
                 </form>
                 <div class="list-data">
-                  <div class="card animate__animated animate__fadeInUp">
-                    <div class="images">
-                      <img src="/thumbnail-1625988490238.jpg" alt="">
-                    </div>
-                    <div class="info">
-                      <p>Author: Kerel Khalif Afif</p>
-                      <p>Created Date: 22-14-2021</p>
-                      <div class="info-detail">
-                        <p class="info-title">Cara mencari uang</p>
-                        <p>Tahukah kamu kalo mencari uang itu susah</p>
-                        <form action="" method="POST">
-                          <input type="hidden" name="id">
-                          <select name="status" id="status" onchange="this.form.submit()">
-                            <option value="request" selected>Request</option>
-                            <option value="publish">Publish</option>
-                          </select>
-                        </form>
+                  <% if(data == false) { %>
+                    <p>No Data Found</p>
+                  <% }else{ %>
+                  <% data.forEach((post) => { %>
+                    <div class="card animate__animated animate__fadeIn">
+                      <div class="images">
+                        <img src="/<%= post.thumbnail %>" alt="Thumbnail">
+                      </div>
+                      <div class="info">
+                        <p>Author: <%= post.author %></p>
+                        <p>Created Date: <%= post.date.toLocaleString() %></p>
+                        <div class="info-detail">
+                          <p class="info-title"><%= post.title %></p>
+                          <p><%= post.description %></p>
+                          <form action="" method="POST">
+                            <input type="hidden" name="id" value="<%= post._id %>">
+                            <select name="status" id="status" onchange="this.form.submit()">
+                              <% if(post.status == 'request') { %>
+                                <option value="request" selected>Request</option>
+                                <option value="publish">Publish</option>
+                                <option value="deleted">Deleted</option>
+                              <% }else if(post.status == 'publish'){ %>
+                                <option value="request">Request</option>
+                                <option value="publish" selected>Publish</option>
+                                <option value="deleted">Deleted</option>
+                              <% }else{ %>
+                                <option value="request">Request</option>
+                                <option value="publish">Publish</option>
+                                <option value="deleted" selected>Deleted</option>
+                              <% } %>
+                            </select>
+                          </form>
+                          <a class="btn-view" href="/blogs/<%= post.slug %>">View Post</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  <% }) %>
+                  <% } %>
                 </div>
               </div>
             </div>
