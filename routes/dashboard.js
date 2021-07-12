@@ -7,31 +7,66 @@ const { thumbnailUpload } = require('../config/fileUpload');
 const { body } = require('express-validator');
 const Blog = require('../config/blog');
 const fs = require('fs');
+const { isBuffer } = require('util');
 
 
 router.use(cekLogin);
 
 router.get('/', async (req, res) => {
   //DATA
-  const pages = await Page.find((err, result) => {
+  const homeView = await Page.findOne({ page: 'Homepage'}, (err, result) => {
+   return result;
+  });
+
+  const postRequest = await Blog.find({ status: 'request'}, (err, result) => {
+    return result;
+  })
+
+  const postPublish = await Blog.find({ status: 'publish'}, (err, result) => {
+    return result;
+  })
+
+  const postDeleted = await Blog.find({ status: 'deleted'}, (err, result) => {
+    return result;
+  })
+
+  const viewData = {
+    homeView: homeView.views,
+    postRequest: postRequest.length,
+    postPublish: postPublish.length,
+    postDeleted: postDeleted.length
+  }
+
+  const lastPost =  await Blog.find({}, null, {skip: 0, limit: 5, sort : { date: -1}}, (err, result) => {
     return result;
   });
-  res.render('dashboard', { hal: 'Dashboard', pages: pages, useremail: req.session.user_email});
+  console.log(viewData);
+  res.render('dashboard', { 
+    hal: 'Dashboard',
+    viewData: viewData,
+    lastPost,
+    useremail: req.session.user_email});
 });
 
+router.post('/changestatus', async (req, res) => {
+  await Blog.findByIdAndUpdate(req.body.id, { $set : { status: req.body.status}}, null, (err, result) => {
+    if(err) return res.redirect('/dashboard');
+    
+    res.redirect('/dashboard/listpost');
+  })
+})
 router.get('/listpost', async (req, res) => {
   //get all data
   let data;
   if(req.query.search){
     const re = new RegExp(req.query.search, 'i');
-    data = await Blog.find({$or :[{ title: { $regex: re} }, {description: { $regex: re}}] },(err, result) => {
+    data = await Blog.find({$or :[{ title: { $regex: re} }, {description: { $regex: re}}] }, null, { sort: {date: -1} },(err, result) => {
         if(err) return res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email, data: false});
-        console.log(result);
         return result;
       })
     
   }else{
-    data = await Blog.find((err, result) => {
+    data = await Blog.find({}, null, { sort: {date: -1}},(err, result) => {
       if(err) return res.render('dashboard', { hal: 'Listpost', useremail: req.session.user_email, data: false});
       return result;
     })

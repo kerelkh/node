@@ -328,7 +328,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .post li .author{
-  width: 100px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,6 +337,7 @@ body::-webkit-scrollbar-thumb {
 
 .author p{
   color: rgba(130,130,130);
+  font-size: .9em;
 }
 
 .info{
