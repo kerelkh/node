@@ -138,24 +138,7 @@
                           <p class="date">Created Date: <%= post.date.toLocaleString() %></p>
                         </div>
                         <div class="action">
-                          <form action="" method="POST">
-                            <input type="hidden" name="id" value="<%= post._id %>">
-                            <select name="status" id="status" onchange="this.form.submit()">
-                              <% if(post.status == 'request') { %>
-                                <option value="request" selected>Request</option>
-                                <option value="publish">Publish</option>
-                                <option value="deleted">Deleted</option>
-                              <% }else if(post.status == 'publish'){ %>
-                                <option value="request">Request</option>
-                                <option value="publish" selected>Publish</option>
-                                <option value="deleted">Deleted</option>
-                              <% }else{ %>
-                                <option value="request">Request</option>
-                                <option value="publish">Publish</option>
-                                <option value="deleted" selected>Deleted</option>
-                              <% } %>
-                            </select>
-                          </form>
+                          <p><%= post.status %></p>
                         </div>
                       </li>
                     <% }) %>

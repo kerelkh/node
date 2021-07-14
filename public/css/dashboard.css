@@ -366,9 +366,10 @@ body::-webkit-scrollbar-thumb {
   padding: 0 1em;
 }
 
-.action select{
-  padding: 10px;
+.action p{
+  padding: 5px 20px;
   line-height: 32px;
+  text-transform: capitalize;
   font-weight: 600;
   border: none;
   outline: none;
