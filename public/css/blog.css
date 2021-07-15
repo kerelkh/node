@@ -1,0 +1,381 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: .5em;
+  background: #fff;
+  display: none;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background: #ffd82c;
+}
+
+
+/* navbar css */
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .25s;
+  color: #fff;
+}
+
+.nav.active-down{
+  background: #fff !important;
+  color: #030303 !important;
+}
+
+.nav>.container{
+  width: 100%;
+}
+
+.nav nav{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-nav{
+  font-size: 1em;
+  line-height: 32px;
+  padding: .5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing:1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-nav img{
+  height: 2em;
+}
+
+.btn{
+  display: none;
+  padding: 5px;
+  border: none;
+  background: none;
+  outline: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+.btn-toggle-menu span{
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  transition: .25s;
+}
+
+.btn-toggle-menu.active span:nth-child(1){
+  transform: rotateZ(40deg) translateY(10px);
+}
+.btn-toggle-menu.active span:nth-child(2){
+  opacity: 0;
+}
+
+.btn-toggle-menu.active span:nth-child(3){
+  transform: rotateZ(-40deg) translateY(-10px);
+}
+
+.right-nav{
+  transition: .5s;
+}
+
+.right-nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+}
+
+.right-nav a{
+  display: inline-block;
+  line-height: 32px;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.right-nav .link.active{
+  border-bottom: 3px solid #fff;
+}
+
+.right-nav .link:hover{
+  border-bottom: 3px solid #fff;
+}
+
+.right-nav .link.active-down:hover{
+  border-bottom: 3px solid #030303 !important;
+}
+
+.btn-login{
+  color: #030303 !important;
+  background: #ffd82c;
+  padding: 0 2em!important;
+  border-radius: 10px;
+  margin-left: 2em;
+}
+
+/* end of navbar css */
+
+/* jumbotron css */
+.jumbotron{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.jumbotron video{
+  position: absolute;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+}
+
+.jumbotron .container{
+  background: radial-gradient(transparent, rgba(0,0,0,1));
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron .hero{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron .hero>h1{
+  color: #fff;
+  font-size: 6em;
+}
+
+.jumbotron .hero>p{
+  color: #ffd82c;
+  font-size: 2.5em;
+  font-family: 'Marck Script', serif;
+}
+
+
+
+
+/* end of jumbotron css */
+/* blogs css */
+#blog{
+  min-height: 700px;
+  width: 100vw;
+}
+
+
+/* end of blogs css */
+
+/* footer */
+*  footer css */
+footer{
+  border-top: 2px solid #ffd82c;
+  background: #fff;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 0;
+}
+
+footer audio{
+  height: 1.4em;
+  color: #ffd82c;
+  position: absolute;
+  left: 1em;
+}
+
+footer p{
+  margin: 0 auto;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+footer a{
+  position: absolute;
+  right: 1em;
+  color: #030303;
+  background: #ffd82c;
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+footer a:hover{
+  background: #e9c111;
+}
+
+/* end of footer css */
+/*  button to top css */
+
+.to-top{
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 1.7em;
+  z-index: 999;
+  background: #ffd82c;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.to-top:hover{
+  background: #e9c111;
+}
+
+@media (max-width: 1080px){
+
+  .jumbotron .hero>h1{
+    font-size: 5em;
+  }
+
+  .jumbotron .hero>p{
+    font-size: 2.5em;
+  }
+  #footer audio{
+    display: none;
+  }
+
+  #footer a{
+    display: none;
+  }
+}
+
+@media (max-width: 670px){
+  .nav .container, .jumbotron .container, .about .container{
+    width: 95%;
+  }
+  .nav nav{
+    position: relative;
+  }
+
+  nav .btn{
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    right: -15%;
+  }
+
+  .left-nav{
+    width: 100%;
+  }
+  .right-nav.active{
+    top: 50px;
+  }
+
+  .right-nav{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -400px;
+  }
+  .right-nav ul{
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0px rgba(230,230,230,.7);
+  }
+
+  .right-nav a{
+    color: #030303 !important;
+  }
+
+  .btn-login{
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+
+  .jumbotron .hero{
+    width: 80%;
+  }
+
+  .jumbotron .hero>h1{
+    font-size: 4em;
+  }
+
+  .jumbotron .hero>p{
+    font-size: 2em;
+  }
+  #footer p{
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 470px){
+
+  .jumbotron .hero>p{
+    text-align: justify;
+  }
+  #footer p{
+    font-size: .6em;
+  }
+}
+
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

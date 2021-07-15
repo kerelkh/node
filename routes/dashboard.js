@@ -18,6 +18,10 @@ router.get('/', async (req, res) => {
    return result;
   });
 
+  const blogView = await Page.findOne({ page: 'Blog'}, (err, result) => {
+    return result;
+  })
+
   const postRequest = await Blog.find({ status: 'request'}, (err, result) => {
     return result;
   })
@@ -32,6 +36,7 @@ router.get('/', async (req, res) => {
 
   const viewData = {
     homeView: homeView.views,
+    blogView: blogView.views,
     postRequest: postRequest.length,
     postPublish: postPublish.length,
     postDeleted: postDeleted.length

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Project Node">
+  <meta name="description" content="Blogs i wrote">
+  <title>Blogs | Kerelka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/logos/logo-96x96.png">
+  <meta name="theme-color" content="#ffd82c">
+</head>
+<body>
+  <div class="nav">
+    <div class="container">
+      <nav>
+        <div class="left-nav">
+          <img src="images/logos/logo-144x144.png" alt="Logo" loading="lazy">
+          <h1>ERELKA</h1>
+        </div>
+        <button class='btn btn-toggle-menu' id="btnToggle" aria-label="toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="right-nav">
+          <ul>
+            <li><a href="/" class="link">Home</a></li>
+            <li><a href="/blogs" class='link active'>Blogs</a></li>
+            <li><a href="/projects" class='link'>Projects</a></li>
+            <% if(login) { %>
+            <li><a href="/dashboard" class='btn-login'>Dashboard</a></li>
+            <li><a href="/logout" class='btn-login btn-red'>Logout</a></li>
+            <% } else { %>
+            <li><a href="/login" class='btn-login'>Login</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <video autoplay loop muted poster="/images/imgs/video-thumbnail.png">
+      <source src="/video/background1.mp4" type="video/mp4"> 
+      <source src="/video/office.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <div class="hero">
+        <h1 class="animate__animated animate__zoomInDown">{ /Blogs }</h1>
+        <p class="animate__animated animate__zoomIn">The best time to act on this was decades ago. The second best time is now.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="blogs">
+    <div class="container">
+      <h1>Halooo</h1>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+
+  <footer id="footer">
+    <div class="container">
+      <audio controls>
+        <source src="music/bensound-buddy.mp3" type="audio/mpeg">
+        Your Browser doest not support the audio element.
+      </audio>
+      <p>Life & Journey | Design & Created by Kerel | &copy; copyright 2021</p>
+      <a href="#">Term & Condition</a>
+    </div>
+  </footer>
+
+  <button class="to-top animate__animated animate__slideInUp" id="toTop"><i class="far fa-arrow-alt-circle-up"></i></button>
+  <script src="js/blog.js"></script>
+</body>
+</html>
