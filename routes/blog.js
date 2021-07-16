@@ -43,13 +43,20 @@ router.get('/', updateCount('Blog'), async (req, res) => {
   }
 })
 
-router.get('/:slug', (req, res) => {
+router.get('/:slug', async (req, res) => {
   //cek login
   let login = false;
   if(req.session.username){
     login = true;
   }
-  res.render('post', { login });
+
+  //get data based on slug
+  const data = await Blog.findOneAndUpdate({ slug: req.params.slug, status: 'publish'}, { $inc: { views: 1}}, {new: true});
+  if(data){
+    return res.render('post', {login, data});
+  }else{
+    return res.render('post', {login, data: false});
+  }
 })
 
 

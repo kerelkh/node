@@ -1,4 +1,5 @@
 const Page = require('./pageCount');
+const Blog = require('./blog');
 
 const cekLogin = (req, res, next) => {
   if(!req.session.username) return res.redirect('/login')
@@ -34,8 +35,9 @@ const updateCount = (page) => {
     next();
   }
 }
+
 module.exports = {
   cekLogin,
   cekNotLogin,
-  updateCount
+  updateCount,
 }

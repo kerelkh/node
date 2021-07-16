@@ -126,14 +126,14 @@ router.post('/newpost',
     }
 
     //edit input form
-    const title = req.body.title.toLowerCase();
-    const titleArray = title.split(" ");
+    const titleLower = req.body.title.toLowerCase();
+    const titleArray = titleLower.split(" ");
     const slug = titleArray.join("-");
     const description = req.body.simple_desc.toLowerCase();
     const author = req.body.author.toLowerCase();
     const category = req.body.category.split(" ");
     const newBlog = new Blog({
-      title,
+      title: req.body.title(),
       slug,
       author,
       description,
