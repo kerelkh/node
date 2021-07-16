@@ -13,9 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/blog.css">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/logos/logo-96x96.png">
+  <link rel="stylesheet" href="/css/animate.min.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo-96x96.png">
   <meta name="theme-color" content="#ffd82c">
 </head>
 <body>
@@ -23,7 +23,7 @@
     <div class="container">
       <nav>
         <div class="left-nav">
-          <img src="images/logos/logo-144x144.png" alt="Logo" loading="lazy">
+          <img src="/images/logos/logo-144x144.png" alt="Logo" loading="lazy">
           <h1>ERELKA</h1>
         </div>
         <button class='btn btn-toggle-menu' id="btnToggle" aria-label="toggle menu">
@@ -88,7 +88,7 @@
               <% datas.forEach((data) => { %>
                 <div class="post">
                   <div class="img-container">
-                    <img src="<%= data.thumbnail %>" alt="">
+                    <img src="/<%= data.thumbnail %>" alt="">
                   </div>
                   <div class="info">
                     <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
@@ -109,7 +109,7 @@
               <% datas.forEach((data) => { %>
                 <div class="post">
                   <div class="img-container">
-                    <img src="<%= data.thumbnail %>" alt="">
+                    <img src="/<%= data.thumbnail %>" alt="">
                   </div>
                   <div class="info">
                     <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
@@ -124,7 +124,7 @@
           </div>
         <% }else{ %>
         <div class="highlight">
-          <img src="<%= newestData[0].thumbnail %>" alt="Image Highlight">
+          <img src="/<%= newestData[0].thumbnail %>" alt="Image Highlight">
           <div class="content-highlight">
             <div class="content-link">
               <p class="date">Date: <%= newestData[0].date.toLocaleString() %></p>
@@ -140,7 +140,7 @@
             <% popularData.forEach((data) => { %>
               <div class="post">
                 <div class="img-container">
-                  <img src="<%= data.thumbnail %>" alt="">
+                  <img src="/<%= data.thumbnail %>" alt="">
                 </div>
                 <div class="info">
                   <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
@@ -158,7 +158,7 @@
             <% newestData.forEach((data) => { %>
               <div class="post">
                 <div class="img-container">
-                  <img src="<%= data.thumbnail %>" alt="Image <%= data.title %>">
+                  <img src="/<%= data.thumbnail %>" alt="Image <%= data.title %>">
                 </div>
                 <div class="info">
                   <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
@@ -180,7 +180,7 @@
   <footer id="footer">
     <div class="container">
       <audio controls>
-        <source src="music/bensound-buddy.mp3" type="audio/mpeg">
+        <source src="/music/bensound-buddy.mp3" type="audio/mpeg">
         Your Browser doest not support the audio element.
       </audio>
       <p>Life & Journey | Design & Created by Kerel | &copy; copyright 2021</p>

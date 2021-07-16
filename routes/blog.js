@@ -43,5 +43,14 @@ router.get('/', updateCount('Blog'), async (req, res) => {
   }
 })
 
+router.get('/:slug', (req, res) => {
+  //cek login
+  let login = false;
+  if(req.session.username){
+    login = true;
+  }
+  res.render('post', { login });
+})
+
 
 module.exports = router;

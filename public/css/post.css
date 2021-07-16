@@ -1,0 +1,284 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: .5em;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #ffd82c;
+}
+/* navbar css */
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(230,230,230,.7);
+}
+
+.nav>.container{
+  background: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.nav nav{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-nav{
+  font-size: 1em;
+  line-height: 32px;
+  padding: .5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing:1px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-nav img{
+  height: 2em;
+}
+
+.btn{
+  display: none;
+  padding: 5px;
+  border: none;
+  background: none;
+  outline: none;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  left: 100%;
+}
+
+.btn-toggle-menu span{
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  transition: .25s;
+}
+
+.btn-toggle-menu.active span:nth-child(1){
+  transform: rotateZ(40deg) translateY(10px);
+}
+.btn-toggle-menu.active span:nth-child(2){
+  opacity: 0;
+}
+
+.btn-toggle-menu.active span:nth-child(3){
+  transform: rotateZ(-40deg) translateY(-10px);
+}
+
+.right-nav{
+  transition: .5s;
+}
+
+.right-nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+}
+
+.right-nav a{
+  display: inline-block;
+  line-height: 32px;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 600;
+  color: #030303;
+  border: 2px solid transparent;
+}
+
+.right-nav .link.active{
+  border-bottom: 3px solid #030303;
+}
+
+.right-nav .link:hover{
+  border-bottom: 3px solid #030303;
+}
+
+.btn-login{
+
+  background: #ffd82c;
+  padding: 0 2em!important;
+  border-radius: 10px;
+  margin-left: 2em;
+}
+
+/* end of navbar css */
+/*  footer css */
+footer{
+  border-top: 2px solid #ffd82c;
+  background: #fff;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 0;
+}
+
+footer audio{
+  height: 1.4em;
+  color: #ffd82c;
+  position: absolute;
+  left: 1em;
+}
+
+footer p{
+  margin: 0 auto;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+footer a{
+  position: absolute;
+  right: 1em;
+  color: #030303;
+  background: #ffd82c;
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+footer a:hover{
+  background: #e9c111;
+}
+
+/* end of footer */
+/*  button to top css */
+
+.to-top{
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 1.7em;
+  z-index: 999;
+  background: #ffd82c;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.to-top:hover{
+  background: #e9c111;
+}
+
+/* end of button top css */
+/* media */
+@media (max-width: 1080px){
+  #footer audio{
+    display: none;
+  }
+
+  #footer a{
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 670px){
+  .nav .container{
+    width: 95%;
+  }
+  .nav nav{
+    position: relative;
+  }
+
+  nav .btn{
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    right: 0;
+  }
+
+  .left-nav{
+    width: 100%;
+  }
+  .right-nav.active{
+    top: 50px;
+  }
+
+  .right-nav{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -400px;
+  }
+  .right-nav ul{
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0px rgba(230,230,230,.7);
+  }
+
+  .btn-login{
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+
+  #footer p{
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 470px){
+  #footer p{
+    font-size: .6em;
+  }
+
+}
+
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
