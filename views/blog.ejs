@@ -73,13 +73,56 @@
           </form>
         </div>
         <div class="category">
-          <a href="/blogs?search=tech">Tech</a>
-          <a href="/blogs?search=life">Life</a>
-          <a href="/blogs?search=Tutorial">Tutorial</a>
-          <a href="/blogs?search=Bussiness">Bussiness</a>
+          <a href="/blogs?category=tech">Tech</a>
+          <a href="/blogs?category=life">Life</a>
+          <a href="/blogs?category=Tutorial">Tutorial</a>
+          <a href="/blogs?category=Bussiness">Bussiness</a>
         </div>
       </div>
       <div class="blogs">
+        <% if(typeof search != "undefined") { %>
+          <div class="list">
+            <h2>Keyword: "<%= keyword %>"</h2>
+            <div class="list-trending">
+              <% if(typeof datas != "undefined" && datas.length != 0) { %>
+              <% datas.forEach((data) => { %>
+                <div class="post">
+                  <div class="img-container">
+                    <img src="<%= data.thumbnail %>" alt="">
+                  </div>
+                  <div class="info">
+                    <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
+                    <p class="desc"><%= data.description %></p>
+                  </div>
+                </div>
+              <% }) %>
+              <% }else{ %>
+              <p>No Data Found</p>
+              <% } %>
+            </div>
+          </div>
+        <% }else if(typeof category != "undefined") { %>
+          <div class="list">
+            <h2>Category: "<%= keyword %>"</h2>
+            <div class="list-trending">
+              <% if(typeof datas != "undefined" && datas.length != 0) { %>
+              <% datas.forEach((data) => { %>
+                <div class="post">
+                  <div class="img-container">
+                    <img src="<%= data.thumbnail %>" alt="">
+                  </div>
+                  <div class="info">
+                    <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
+                    <p class="desc"><%= data.description %></p>
+                  </div>
+                </div>
+              <% }) %>
+              <% }else{ %>
+              <p>No Data Found</p>
+              <% } %>
+            </div>
+          </div>
+        <% }else{ %>
         <div class="highlight">
           <img src="<%= newestData[0].thumbnail %>" alt="Image Highlight">
           <div class="content-highlight">
@@ -91,35 +134,21 @@
           </div>
         </div>
         <div class="list">
-          <h2>Trending Post</h2>
+          <h2>Popular Post</h2>
           <div class="list-trending">
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
+            <% if(typeof popularData != "undefined") { %>
+            <% popularData.forEach((data) => { %>
+              <div class="post">
+                <div class="img-container">
+                  <img src="<%= data.thumbnail %>" alt="">
+                </div>
+                <div class="info">
+                  <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
+                  <p class="desc"><%= data.description %></p>
+                </div>
               </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
+            <% }) %>
+            <% } %>
           </div>
         </div>
         <div class="list">
@@ -140,6 +169,7 @@
             <% }%>
           </div>
         </div>
+        <% } %>
       </div>
     </div>
   </div>
