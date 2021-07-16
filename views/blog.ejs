@@ -81,12 +81,12 @@
       </div>
       <div class="blogs">
         <div class="highlight">
-          <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
+          <img src="<%= newestData[0].thumbnail %>" alt="Image Highlight">
           <div class="content-highlight">
             <div class="content-link">
-              <p class="date">Date: 21-07-2021</p>
-              <a href="#" class="highlight-title">Cara mencari uang yang baik dan benar</a>
-              <p class="highlight-desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
+              <p class="date">Date: <%= newestData[0].date.toLocaleString() %></p>
+              <a href="/blogs/<%= newestData[0].slug %>" class="highlight-title"><%= newestData[0].title %></a>
+              <p class="highlight-desc"><%= newestData[0].description %></p>
             </div>
           </div>
         </div>
@@ -125,114 +125,19 @@
         <div class="list">
           <h2>Newest Post</h2>
           <div class="list-trending">
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
+            <% if(typeof newestData != 'undefined') { %>
+            <% newestData.forEach((data) => { %>
+              <div class="post">
+                <div class="img-container">
+                  <img src="<%= data.thumbnail %>" alt="Image <%= data.title %>">
+                </div>
+                <div class="info">
+                  <a href="/blogs/<%= data.slug %>" class="link"><%= data.title %></a>
+                  <p class="desc"><%= data.description %></p>
+                </div>
               </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
-            <div class="post">
-              <div class="img-container">
-                <img src="/images/imgs/welcome_jumbotron.jpg" alt="">
-              </div>
-              <div class="info">
-                <a href="#" class="link">Cara mencari uang yang halal dan ampuh</a>
-                <p class="desc">Titik balik pencarian uang didefinikan sebagai hasil yang sah dan benar</p>
-              </div>
-            </div>
+            <% }) %>
+            <% }%>
           </div>
         </div>
       </div>
