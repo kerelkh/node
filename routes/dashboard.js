@@ -45,7 +45,6 @@ router.get('/', async (req, res) => {
   const lastPost =  await Blog.find({}, null, {skip: 0, limit: 5, sort : { date: -1}}, (err, result) => {
     return result;
   });
-  console.log(viewData);
   res.render('dashboard', { 
     hal: 'Dashboard',
     viewData: viewData,
@@ -160,5 +159,17 @@ router.post('/newpost',
       return res.redirect('/dashboard/newpost');
     })
   })
+})
+
+router.get('/editpost/:slug', async (req, res) => {
+  //get data based on slug
+  const data = await Blog.findOne({ slug: req.params.slug}, function(err, result) {
+    if(err) return false;
+    if(result == 0 ){
+      return false;
+    }
+    return result;
+  })
+  res.render('dashboard', { hal: 'Editpost', useremail: req.session.user_email, data: data});
 })
 module.exports = router;

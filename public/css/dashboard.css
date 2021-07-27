@@ -431,11 +431,11 @@ body::-webkit-scrollbar-thumb {
 
 
 /* new post css */
-#newpost{
+#newpost, #editpost{
   width: 100%;
 }
 
-#newpost .container, #listpost .container{
+#newpost .container, #listpost .container, #editpost .container{
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px 0 rgba(230,230,230,.9);
@@ -446,11 +446,11 @@ body::-webkit-scrollbar-thumb {
   align-items: flex-start;
 }
 
-#newpost h2, #listpost h2{
+#newpost h2, #listpost h2, #editpost h2{
   border-bottom: 5px solid #ffd82c;
 }
 
-#newpost form{
+#newpost form, #editpost form{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -459,26 +459,26 @@ body::-webkit-scrollbar-thumb {
   padding: 2em;
 }
 
-#newpost .form-group{
+#newpost .form-group, #editpost .form-group{
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 2em;
 }
 
-#newpost label{
+#newpost label, #editpost label{
   width: 150px;
   font-weight: 600;
   line-height: 32px;
   margin-right: 1em;
 }
 
-#newpost label>span{
+#newpost label>span, #editpost label>span{
   color: rgba(100,100,100,.8);
   font-size: .8em;
 }
 
-#newpost input, #newpost textarea{
+#newpost input, #newpost textarea,#editpost input, #editpost textarea{
   width: 700px;
   line-height: 32px;
   font-size: 1em;
@@ -486,7 +486,7 @@ body::-webkit-scrollbar-thumb {
   transition: .25s;
 }
 
-#newpost input{
+#newpost input, #editpost input{
   border: none;
   background: #fff;
   border-bottom: 2px solid #ffd82c;
@@ -624,12 +624,16 @@ body::-webkit-scrollbar-thumb {
   background: #ffd82c;
 }
 
-.btn-view{
+.btn-view, .btn-edit{
   position: absolute;
   right: 5px;
   bottom: 5px;
   border-bottom: 1px solid #ffd82c;
   color: #2c7c8b;
+}
+
+.btn-edit{
+  right: 100px;
 }
 
 
