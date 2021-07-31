@@ -7,6 +7,7 @@ const { thumbnailUpload } = require('../config/fileUpload');
 const { body } = require('express-validator');
 const Blog = require('../config/blog');
 const fs = require('fs');
+const path = require('path');
 const { isBuffer } = require('util');
 
 
@@ -132,7 +133,7 @@ router.post('/newpost',
     const author = req.body.author.toLowerCase();
     const category = req.body.category.split(" ");
     const newBlog = new Blog({
-      title: req.body.title(),
+      title: req.body.title,
       slug,
       author,
       description,
@@ -149,7 +150,9 @@ router.post('/newpost',
       }
       return res.redirect('/dashboard/newpost');
     }).catch((err) => {
-      fs.unlink(`../uploads/${req.file.filename}`);
+      fs.unlink(path.join(__dirname, '../uploads', `${req.file.filename}`), (err) => {
+        if(err) console.log(err);
+      });
       req.session.flash = {
         type: 'danger',
         intro: 'Failed -',
@@ -163,13 +166,131 @@ router.post('/newpost',
 
 router.get('/editpost/:slug', async (req, res) => {
   //get data based on slug
-  const data = await Blog.findOne({ slug: req.params.slug}, function(err, result) {
-    if(err) return false;
-    if(result == 0 ){
-      return false;
+  await Blog.find({ slug: req.params.slug}, async function(err, result) {
+    if(err){
+      return res.redirect('/dashboard/listpost');
     }
-    return result;
+    if(result == 0 ){
+      return res.redirect('/dashboard');
+    }
+    await result.forEach((item) => {
+      let category = "";
+      item.category.forEach((cate) => {
+        category += `${cate} `;
+      })
+      let data = {
+        id: item._id,
+        slug: req.params.slug,
+        prevThumbnail: item.thumbnail,
+        title: item.title,
+        author: item.author,
+        description: item.description,
+        body: item.body,
+        category: category
+      }
+      return res.render('dashboard', { hal: 'Editpost', useremail: req.session.user_email, data: data});
+    })
   })
-  res.render('dashboard', { hal: 'Editpost', useremail: req.session.user_email, data: data});
 })
+
+router.post('/editpost',
+  body('title').not().isEmpty().trim().escape(),
+  body('author').not().isEmpty().trim().escape(),
+  body('simple_desc').not().isEmpty().trim().escape(),
+  body('category').not().isEmpty().trim().escape(),
+  async(req, res) => {
+  await thumbnailUpload(req, res, async (err) => {
+    
+    if(err) {
+      req.session.flash = {
+        type: 'danger',
+        intro: 'Error!',
+        info: err.message
+      };
+      req.session.prevData = prevData;
+      return res.redirect('/dashboard/editpost');
+    }
+
+    if(!req.file){
+      const inputForm = await JSON.parse(JSON.stringify(req.body));
+      const titleLower = inputForm.title.toLowerCase();
+      const titleArray = titleLower.split(" ");
+      const slug = titleArray.join("-");
+      const description = inputForm.simple_desc.toLowerCase();
+      const author = inputForm.author.toLowerCase();
+      const category = inputForm.category.split(" ");
+      const updateData = {
+        title: inputForm.title,
+        slug,
+        author,
+        description,
+        body: inputForm.body,
+        category,
+        edited: Date.now(),
+      }
+      await Blog.findByIdAndUpdate(inputForm.id, { $set : updateData}, null, (err, result) => {
+        if(err){
+          req.session.flash = {
+            type: 'danger',
+            intro: 'Failed -',
+            info: err,
+          }
+          return res.redirect(`/dashboard/editpost/${inputForm.slug}`)
+        } 
+        req.session.flash = {
+          type: 'success',
+          intro: 'New Data Saved -',
+          info: 'Success saving new data in database',
+        }
+        return res.redirect(`/dashboard/editpost/${slug}`);
+      })
+    }else{
+      //success saving file
+
+      const inputForm = await JSON.parse(JSON.stringify(req.body));
+
+      //unlink previous thumbnail
+      if(inputForm){
+        fs.unlink(path.join(__dirname, '../uploads', `${inputForm.prevThumbnail}`), (err) => {
+          if(err) console.log(err);
+        });
+      }
+
+      const titleLower = inputForm.title.toLowerCase();
+      const titleArray = titleLower.split(" ");
+      const slug = titleArray.join("-");
+      const description = inputForm.simple_desc.toLowerCase();
+      const author = inputForm.author.toLowerCase();
+      const category = inputForm.category.split(" ");
+      const updateData = {
+        title: inputForm.title,
+        slug,
+        author,
+        description,
+        thumbnail: req.file.filename,
+        body: inputForm.body,
+        category,
+        edited: Date.now(),
+      }
+      await Blog.findByIdAndUpdate(inputForm.id, { $set : updateData}, null, (err, result) => {
+        if(err){
+          req.session.flash = {
+            type: 'danger',
+            intro: 'Failed -',
+            info: err,
+          }
+          return res.redirect(`/dashboard/editpost/${inputForm.slug}`)
+        } 
+        req.session.flash = {
+          type: 'success',
+          intro: 'New Data Saved -',
+          info: 'Success saving new data in database',
+        }
+        res.redirect(`/dashboard/editpost/${slug}`);
+      })
+    }
+  })
+  
+})
+
 module.exports = router;

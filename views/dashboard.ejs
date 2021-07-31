@@ -247,7 +247,9 @@
                   </div>
               <% } %>
               <form action="/dashboard/editpost" class="animate__animated animate__fadeInUp" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<% data._id %>">
+                <input type="hidden" name="id" value="<%= data.id %>">
+                <input type="hidden" name="slug" value="<%= data.slug %>">
+                <input type="hidden" name="prevThumbnail" value="<%= data.prevThumbnail %>">
                 <div class="form-group">
                   <label for="title">Title</label>
                   <input type="text" name="title" id="title" placeholder="Title pos" autocomplete="off" value="<%= data.title %>" required>
