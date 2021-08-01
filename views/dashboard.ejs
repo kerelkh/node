@@ -285,6 +285,17 @@
           <div class="content" id="listpost">
             <div class="container">
               <h2>BLOGS</h2>
+              <% if(flash){ %>
+                <% if(flash.type == 'danger') { %>
+                  <div class="alert alert-danger">
+                <% } else if(flash.type=='success') {%>
+                  <div class="alert alert-success">
+                <% } else { %>
+                  <div class="alert alert-info">
+                <% } %>
+                    <p><span class="bold"><%= flash.intro %></span> <%=flash.info %></p>
+                  </div>
+              <% } %>
               <div class="datas">
                 <form action="/dashboard/listpost" method="GET">
                   <div class="form-group">

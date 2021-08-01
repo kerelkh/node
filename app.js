@@ -29,6 +29,7 @@ const loginRoute = require('./routes/login');
 const dashboardRoute = require('./routes/dashboard');
 const logoutRoute = require('./routes/logout');
 const blogRoute = require('./routes/blog');
+const confirmationRoute = require('./routes/confirmation');
 
 
 //secretRegister
@@ -46,6 +47,7 @@ app.use('/login', loginRoute);
 app.use('/dashboard', dashboardRoute);
 app.use('/logout', logoutRoute);
 app.use('/blogs', blogRoute);
+app.use('/confirmation', confirmationRoute);
 
 
 //use routes secretRegister

@@ -8,7 +8,6 @@ const { body } = require('express-validator');
 const Blog = require('../config/blog');
 const fs = require('fs');
 const path = require('path');
-const { isBuffer } = require('util');
 
 
 router.use(cekLogin);
@@ -54,6 +53,10 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/changestatus', async (req, res) => {
+  if(req.body.status === 'deleted'){
+    req.session.id_confirm = req.body.id;
+    return res.redirect("/confirmation");
+  }
   await Blog.findByIdAndUpdate(req.body.id, { $set : { status: req.body.status}}, null, (err, result) => {
     if(err) return res.redirect('/dashboard');
     

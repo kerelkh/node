@@ -43,9 +43,6 @@ const Blog = mongoose.model('blog', {
   },
   edited: {
     type: Date,
-  },
-  deleted: {
-    type: Date
   }
 })
 
